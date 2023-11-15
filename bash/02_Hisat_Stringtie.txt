@@ -1,0 +1,62 @@
+#Realineacion para ver porcentaje de reads alineados en 4 dataset pooleados
+# .sam
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/re_alineado/SRR833508x_2_Merged.sam > SRR833508x_2_Merged_SummatyAlignment.txt
+
+# Brain
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/re-alineado/SRR123893xx_Merged.sam >SRR123893xx_Merged.alnstats 
+
+
+#Islet 24h PAIRED 
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/re-alineado/SRR96824xx_Merged.sam >SRR96824xx_Merged.alnstats 
+
+#Ingap
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Ingap/re-alineado
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/Z_A_Organizar/chrX_data/sample_merged_9_11_16/archivo_merged_4.fq.gz -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/Z_A_Organizar/chrX_data/sample_merged_9_11_16/archivo_merged2_4.fq.gz -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Ingap/re-alineado/Ingap_merged.sam >Ingap_merged.alnstats
+
+# Brain
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/re-alineado/SRR123893xx_Merged.sam >SRR123893xx_Merged.alnstats 
+
+
+#Islet 24h PAIRED 
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/re-alineado/SRR96824xx_Merged.sam >SRR96824xx_Merged.alnstats 
+
+
+
+#Realineacion para obtener alnstats de muestras publicas individualmente 27-05-022
+# Brain SRR12389348 SRR12389349 SRR12389350
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389348
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389348/SRR12389348_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389348/SRR12389348_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389348.sam >Brain1_SRR12389348.alnstats 
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389349
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389349/SRR12389349_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389349/SRR12389349_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389349.sam >Brain2_SRR12389349.alnstats
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389350
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389350/SRR12389350_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389350/SRR12389350_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389350.sam >Brain3_SRR12389350.alnstats
+
+#ISLET 24hs
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682410
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682410/SRR9682410_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682410/SRR9682410_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682410.sam >Islet1_SRR9682410.alnstats 
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682416
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682416/SRR9682416_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682416/SRR9682416_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682416.sam > Islet2_SRR9682416.alnstats.txt 
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682402
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682402/SRR9682402_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682402/SRR9682402_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682402.sam >Islet2_SRR9682402.alnstats 
+
+#Liver 
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335082
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335082/SRR8335082_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335082/SRR8335082_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR8335082.sam > Liver1_SRR8335082alnstats.txt 
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335083
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335083/SRR8335083_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335083/SRR8335083_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR8335083.sam &>Liver2_SRR8335083alnstats.txt
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335084
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335084/SRR8335084_1.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335084/SRR8335084_2.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR8335084.sam >Liver3_SRR8335084alnstats.txt 
+

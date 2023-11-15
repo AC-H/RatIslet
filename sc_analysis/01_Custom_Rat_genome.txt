@@ -1,0 +1,19 @@
+
+cellranger mkref \
+  --genome=Rnor_6_4batch_chrMT \
+  --fasta=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/genome/genome_reference_rn6_NewchrM.fa\
+  --genes=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/4batch_curated/stringtieMerged4batchPairedEnd_containgingMT.gtf \
+  --ref-version=1.0.0
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+

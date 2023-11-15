@@ -1,0 +1,131 @@
+# CellRanger para "Specifying Input FASTQ Files for 10x Pipelines":
+
+https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/fastq-input
+
+#Alignment with 4 batch reference
+
+cellranger count --id=Vivoli_Vehicle_Rep1_4batchReference \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_geneNames_complete_containginMito --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep2_4batchReference \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep2 \
+--transcriptome=Rnor_6_4batch_geneNames_complete_containginMito --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep3_4batchReference \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep3 \
+--transcriptome=Rnor_6_4batch_geneNames_complete_containginMito --noexit
+
+#Alignment with 4 batch reference Mt-
+
+cellranger count --id=Vivoli_Vehicle_Rep1_4batchReference_containingMt \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_containgingMt.filtered --noexit
+
+#Alignment with 4 batch reference Mt- corrected diferent transcript names
+
+cellranger count --id=Vivoli_Vehicle_Rep1_4batchReference_containgingMt_correcteddiferentTranscriptNames \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_containgingMt_correcteddiferentTranscriptNames.filtered  --noexit
+
+cellranger count --id=Rnor_6_1_rev1 \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/sc-Vivoli/Rnor_6.0
+
+
+cellranger count --id=Vivoli_Vehicle_Rep1_4batchReference_containgingMt_NewchrM \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_containgingMt_correcteddiferentTranscriptNames.NewchrM  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep1_Just_MitochondryalReference \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Mitochondryal_reference_genome  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep1_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep2_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep2 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep3_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep3 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Oleate_Rep1_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep1 \
+
+
+cellranger count --id=Vivoli_Oleate_Rep3_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep3 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+-
+cellranger count --id=Vivoli_Oleate_Rep2_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep2 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+
+cellranger count --id=Vivoli_Oleate_Rep4_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep4 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep1_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep1 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep3_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep3 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep4_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep4 \
+--transcriptome=Rnor_6_4batch_correcteddiferentTranscriptNames_chrMT  --noexit
+
+
+#Transcriptoma
+cellranger count --id=Vivoli_Vehicle_Rep1_chrMT_1 \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep1 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep2_chrMT_1 \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep2 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Vehicle_Rep3_chrMT_1 \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Vehicle/Rep3 \
+--transcriptome=  --noexit
+
+cellranger count --id=Vivoli_Oleate_Rep1_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep1 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Oleate_Rep3_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep3 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+-
+cellranger count --id=Vivoli_Oleate_Rep2_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep2 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+
+cellranger count --id=Vivoli_Oleate_Rep4_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Oleate/Rep4 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep1_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep1 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep3_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep3 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+cellranger count --id=Vivoli_Palmitate_Rep4_chrMT \
+--fastqs=/media/grupo_srs/Datos/Ana/Proyecto_INGAP/2023_Vivoli_Rat_islets/Palmitate/Rep4 \
+--transcriptome=Rnor_6_4batch_chrMT  --noexit
+
+
+

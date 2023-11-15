@@ -1,0 +1,117 @@
+
+#POOLEADO FASTQ X3 (Brain, Islet, Liver_PairedEnd) (un unico fastq para cada tejido) PAIRED
+
+#Brain Pooled
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389348/SRR12389348_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389349/SRR12389349_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389350/SRR12389350_1.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_1_Merged.fastq
+
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389348/SRR12389348_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389349/SRR12389349_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR12389350/SRR12389350_2.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_2_Merged.fastq
+
+#Liver_PairedEnd pooled
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335082/SRR8335082_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335083/SRR8335083_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335084/SRR8335084_1.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_1_Merged.fastq
+
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335082/SRR8335082_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335083/SRR8335083_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR8335084/SRR8335084_2.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_2_Merged.fastq
+
+#Islet 24h poleed
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682410/SRR9682410_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682416/SRR9682416_1.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682402/SRR9682402_1.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_1_Merged.fastq
+
+cat /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682410/SRR9682410_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682416/SRR9682416_2.fastq /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR9682402/SRR9682402_2.fastq  > /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_2_Merged.fastq
+
+
+#ALINEACION POOLEADO (Un unico bam file para cada tejido)
+# Generacion de Assembled Transcript para despues generar un merge con los 3*3
+
+#INGAP
+/media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/B_EXP_9_11_16_POOLED/1_HISAT/merged9_11_16.sorted.bam
+
+
+#Liver PAIRED
+
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Liver_PairedEnd/SRR833508x_Merged/SRR833508x_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/SRR833508x_2_Merged.sam
+
+#Brain PAIRED
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Brain_PairedEnd/SRR123893xx_Merged/SRR123893xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR123893xx_Merged.sam  
+
+#Islet 24h PAIRED 
+hisat2 -x /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6genome/indexes/index_name -1 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_1_Merged.fastq -2 /media/grupo_srs/Datos/Ana/Proyecto_INGAP/RawData/Rat/RNA-seq/Islet24h/SRR96824xx_Merged/SRR96824xx_2_Merged.fastq -S /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR96824xx_Merged.sam
+
+# BAM & sorted BAM
+
+cd  /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd
+
+samtools view -bS SRR833508x_2_Merged.sam > SRR833508x_2_Merged.bam
+samtools sort SRR833508x_2_Merged.bam -o SRR833508x_2_Merged.sorted.bam
+rm *.sam *unsorted.bam
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd
+
+samtools view -bS SRR123893xx_Merged.sam > SRR123893xx_Merged.bam
+samtools sort SRR123893xx_Merged.bam -o SRR123893xx_Merged.sorted.bam
+rm *.sam *unsorted.bam
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h
+
+samtools view -bS SRR96824xx_Merged.sam > SRR96824xx_Merged.bam
+samtools sort SRR96824xx_Merged.bam -o SRR96824xx_Merged.sorted.bam
+rm *.sam *unsorted.bam
+
+# 
+
+#Assemble transcripts for each tissue
+
+
+
+stringtie -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6_Annotation/genesAbr2020.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/2_STRINGITE/Liver_PairedEnd/Liver_Merged.gtf -l SRR833508x_2_Merged /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/SRR833508x_2_Merged.sorted.bam
+
+stringtie -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6_Annotation/genesAbr2020.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/2_STRINGITE/Islet24h/Islet24h_Merged.gtf -l SRR96824xx_Merged /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR96824xx_Merged.sorted.bam
+
+stringtie -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6_Annotation/genesAbr2020.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/2_STRINGITE/Brain_PairedEnd/Brain_Mergef.gtf -l SRR123893xx_Merged /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR123893xx_Merged.sorted.bam
+
+#INGAP merge
+/media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/hisat2_3/Stringtie_9_11_16.gtf
+
+# Stringtie Merge
+
+cd /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/2_STRINGITE
+
+stringtie --merge -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/ReferenceData/RattusNorvegicus/Rn6_Annotation/genesAbr2020.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/2_STRINGITE/mergelist_PairedEnd.txt
+
+
+# Stringtie eB
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Brain_PaireEnd/SRR12389348/SRR12389348.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389348.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Brain_PaireEnd/SRR12389349/SRR12389349.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389349.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Brain_PaireEnd/SRR12389350/SRR12389350.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Brain_PairedEnd/SRR12389350.sorted.bam
+
+# Liver
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Liver_PaireEnd/SRR8335082/SRR8335082.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/SRR8335082.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Liver_PaireEnd/SRR8335083/SRR8335083.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/SRR8335083.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Liver_PaireEnd/SRR8335084/SRR8335084.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Liver_PairedEnd/SRR8335084.sorted.bam
+
+
+# Islet 24h
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Islet24h/SRR9682402/SRR9682402.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682402.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Islet24h/SRR9682410/SRR9682410.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682410.sorted.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Islet24h/SRR9682416/SRR9682416.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/1_HISAT/Islet24h/SRR9682416.sorted.bam
+
+
+# Ingap
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/C9/C9.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/C9.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/I9/I9.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/I9.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/C11/C11.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/C11.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/I11/I11.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/I11.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/C16/C16.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/C16.bam
+
+stringtie -e -B -p 8 -G /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/C_publicData/3_STRINGTIE_MERGE_4batch/stringtie_merged_4batch_PairedEnd.gtf -o /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/E_Exp_Tissue_PairedEnd_PooledReference/STRINGTIE_EB_NewReference/Ingap/I16/I16.gtf /media/grupo_srs/Datos/Ana/Proyecto_INGAP/De_novo_transcript_3/A_EXP_9_11_16_18/1_HISAT/I16.bam
+
+
+
+
